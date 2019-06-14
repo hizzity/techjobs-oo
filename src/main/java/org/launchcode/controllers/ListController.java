@@ -19,6 +19,7 @@ import java.util.HashMap;
 @RequestMapping(value = "list")
 public class ListController {
 
+    // now uses model classes
     private JobData jobData = JobData.getInstance();
 
     @RequestMapping(value = "")

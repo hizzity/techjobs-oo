@@ -8,6 +8,7 @@ import org.launchcode.models.JobFieldType;
 public class SearchForm {
 
     // The search options
+    // JobFieldType.java creates the list of ENUMS (eg. EMPLOYER, LOCATION, SKILL, etc)
     private JobFieldType[] fields = JobFieldType.values();
 
     // The selected search options
