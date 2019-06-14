@@ -20,9 +20,9 @@
     job in a table. -->
 
     <h1 th:text="${title}"></h1>
-
+<!-- better way to do this with the "*{}" of the someJob instance...?-->
         <ul>
-
+            <li th:text="${name}"></li>
             <li th:text="${employerName}"></li>
             <li th:text="${location}"></li>
             <li th:text="${positionType}"></li>
