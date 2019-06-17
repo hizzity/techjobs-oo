@@ -1,9 +1,6 @@
 package org.launchcode.models.forms;
 
-import org.launchcode.models.CoreCompetency;
-import org.launchcode.models.Employer;
-import org.launchcode.models.Location;
-import org.launchcode.models.PositionType;
+import org.launchcode.models.*;
 import org.launchcode.models.data.JobData;
 
 import javax.validation.constraints.NotNull;
@@ -26,14 +23,43 @@ public class JobForm {
         TODO #3 - Included other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
+        For tasks #3-5, you'll need to mimic the code that's in place for
+        employerId and the employers list for the other job field types.
      */
+
+    private static int nextEmployerId = 1;
+
+    public JobForm() {                             //put this under the first JobForm() since no info in being passed in with either?
+        employerId = nextEmployerId;
+        nextEmployerId++;
+    }
+
+    public JobForm(String name) {
+        this();                //what does this(); do ???????????????? calls on JobForm()
+        // from notes: this(); has to be at top, calls default constructor for given class (JobForm())
+        this.name = name;
+    }
+
+    public boolean contains(String name) {
+        return this.name.toLowerCase().contains(name.toLowerCase());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        JobForm jobField = (JobForm) o;
+
+        return employerId == jobField.getEmployerId();
+    }
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
     private ArrayList<CoreCompetency> coreCompetencies;
     private ArrayList<PositionType> positionTypes;
 
-    public JobForm() {
+    public JobForm(ArrayList<Job> job) {  //ArrayList<Job> wasn't given, JobForm() was originally empty
 
         JobData jobData = JobData.getInstance();
 
@@ -57,7 +83,7 @@ public class JobForm {
         return employerId;
     }
 
-    public void setEmployerId(int employerId) {
+    private void setEmployerId(int employerId) {                    //I changed this to private, correct?
         this.employerId = employerId;
     }
 
