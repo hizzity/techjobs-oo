@@ -50,10 +50,11 @@ public class JobController {
 
         //validate
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Add Job");
             return "new-job";
         } else {
-            //create new Job object and add it to the data layer by calling jobData.add(newJob)
+            //create new Job object (did that with @ModelAttribute)
+            //and add it to the data layer by calling jobData.add(newJob)
+            //display the new job with job-detail
             jobData.add(newJob);
 
             model.addAttribute("title", "Job");
