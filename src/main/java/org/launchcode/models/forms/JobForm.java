@@ -23,8 +23,7 @@ public class JobForm {
         TODO #3 - Included other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
-        For tasks #3-5, you'll need to mimic the code that's in place for
-        employerId and the employers list for the other job field types.
+
      */
 
     @NotNull
@@ -58,6 +57,9 @@ public class JobForm {
         */
 
         employers = jobData.getEmployers().findAll();
+        locations = jobData.getLocations().findAll();
+        coreCompetencies = jobData.getCoreCompetencies().findAll();
+        positionTypes = jobData.getPositionTypes().findAll();
 
     }
 
