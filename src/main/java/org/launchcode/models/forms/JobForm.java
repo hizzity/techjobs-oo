@@ -27,39 +27,29 @@ public class JobForm {
         employerId and the employers list for the other job field types.
      */
 
-    private static int nextEmployerId = 1;
+    @NotNull
+    @Size(min=1, message = "Name of employer must not be empty")
+    private String employer;
 
-    public JobForm() {                             //put this under the first JobForm() since no info in being passed in with either?
-        employerId = nextEmployerId;
-        nextEmployerId++;
-    }
+    @NotNull
+    @Size(min=1, message = "Location must not be empty")
+    private String location;
 
-    public JobForm(String name) {
-        this();                //what does this(); do ???????????????? calls on JobForm()
-        // from notes: this(); has to be at top, calls default constructor for given class (JobForm())
-        this.name = name;
-    }
+    @NotNull
+    @Size(min=1, message = "The position type must not be empty")
+    private String positionType;
 
-    public boolean contains(String name) {
-        return this.name.toLowerCase().contains(name.toLowerCase());
-    }
+    @NotNull
+    @Size(min=1, message = "Skill must not be empty")
+    private String coreCompetency;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        JobForm jobField = (JobForm) o;
-
-        return employerId == jobField.getEmployerId();
-    }
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
     private ArrayList<CoreCompetency> coreCompetencies;
     private ArrayList<PositionType> positionTypes;
 
-    public JobForm(ArrayList<Job> job) {  //ArrayList<Job> wasn't given, JobForm() was originally empty
+    public JobForm() {
 
         JobData jobData = JobData.getInstance();
 
@@ -83,7 +73,7 @@ public class JobForm {
         return employerId;
     }
 
-    private void setEmployerId(int employerId) {                    //I changed this to private, correct?
+    public void setEmployerId(int employerId) {
         this.employerId = employerId;
     }
 
@@ -117,5 +107,37 @@ public class JobForm {
 
     public void setPositionTypes(ArrayList<PositionType> positionTypes) {
         this.positionTypes = positionTypes;
+    }
+
+    public String getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(String employer) {
+        this.employer = employer;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(String positionType) {
+        this.positionType = positionType;
+    }
+
+    public String getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setCoreCompetency(String coreCompetency) {
+        this.coreCompetency = coreCompetency;
     }
 }
