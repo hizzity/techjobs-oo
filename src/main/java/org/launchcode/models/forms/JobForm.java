@@ -61,6 +61,7 @@ public class JobForm {
         coreCompetencies = jobData.getCoreCompetencies().findAll();
         positionTypes = jobData.getPositionTypes().findAll();
 
+
     }
 
     public String getName() {
