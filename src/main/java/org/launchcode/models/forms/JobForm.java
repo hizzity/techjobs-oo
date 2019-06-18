@@ -42,6 +42,7 @@ public class JobForm {
     @Size(min=1, message = "Skill must not be empty")
     private String coreCompetency;
 
+ //   public static void add(JobData jobForm){jobData.add(jobForm);}  //refer to CheeseData.java line 13
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
@@ -60,7 +61,6 @@ public class JobForm {
         locations = jobData.getLocations().findAll();
         coreCompetencies = jobData.getCoreCompetencies().findAll();
         positionTypes = jobData.getPositionTypes().findAll();
-
 
     }
 

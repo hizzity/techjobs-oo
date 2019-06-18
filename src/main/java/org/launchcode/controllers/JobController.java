@@ -40,21 +40,27 @@ public class JobController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Model model, @Valid JobForm jobForm, Errors errors) {
+    public String add(Model model, @ModelAttribute Job newJob, @Valid JobForm jobForm, Errors errors) {
+// I added @ModelAttribute so that Spring Boot will create a new Job object when it gets the
+// the POST request from /add
 
         // TODO #6 - Validate the JobForm model, and if valid, create a
         // new Job and add it to the jobData data store. Then
         // redirect to the job detail view for the new Job.
 
-        if (errors.hasErrors()){
+        //validate
+        if (errors.hasErrors()) {
             model.addAttribute("title", "Add Job");
-            return "job/add";
+            return "new-job";
+        } else {
+            //create new Job object and add it to the data layer by calling jobData.add(newJob)
+            jobData.add(newJob);
+
+            model.addAttribute("title", "Job");
+            model.addAttribute("someJob", newJob);
+
+            return "job-detail";
         }
-
-        JobData.add(jobForm);
-        return "";
-
-        return "";
 
     }
 }
