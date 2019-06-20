@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,8 +40,9 @@ public class JobController {
         return "new-job";
     }
 
-    @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String add(Model model, @ModelAttribute Job newJob, @Valid JobForm jobForm, Errors errors) {
+    @RequestMapping(value = "add/{id}", method = RequestMethod.POST)
+    public String add(Model model, @ModelAttribute Job newJob, @Valid JobForm jobForm,
+                      Errors errors, @PathVariable int id) {
 // I added @ModelAttribute so that Spring Boot will create a new Job object when it gets the
 // the POST request from /add
 
@@ -64,4 +66,5 @@ public class JobController {
         }
 
     }
+
 }
