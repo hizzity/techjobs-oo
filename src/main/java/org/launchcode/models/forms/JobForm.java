@@ -26,7 +26,7 @@ public class JobForm {
 
      */
 
-//    @NotNull
+//   @NotNull
 //    @Size(min=1, message = "Name of employer must not be empty")
     private String employer;
 

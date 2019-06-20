@@ -57,7 +57,7 @@ public class JobController {
             //display the new job with job-detail
             jobData.add(newJob);
 
-            model.addAttribute("title", "Job");
+            model.addAttribute("title", "Job Listing");
             model.addAttribute("someJob", newJob);
 
             return "job-detail";

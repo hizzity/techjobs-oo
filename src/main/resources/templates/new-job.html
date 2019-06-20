@@ -40,6 +40,15 @@
         </div>
 
         <div class="form-group">
+            <label th:for="positionType">Position Type</label>
+            <select th:field="*{positionType}">
+                <option th:each="positionType : *{positionTypes}"
+                        th:value="${positionType}"
+                        th:text="${positionType}"></option>
+            </select>
+        </div>
+
+        <div class="form-group">
             <label th:for="coreCompetency">Skill</label>
             <select th:field="*{coreCompetency}">
                 <option th:each="coreCompetency : *{coreCompetencies}"
@@ -48,14 +57,7 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label th:for="positionType">Position Type</label>
-            <select th:field="*{positionType}">
-                <option th:each="positionType : *{positionTypes}"
-                        th:value="${positionType}"
-                        th:text="${positionType}"></option>
-            </select>
-        </div>
+
 
         <input type="submit" value="Add Job" />
     </form>
