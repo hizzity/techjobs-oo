@@ -26,20 +26,20 @@ public class JobForm {
 
      */
 
-    @NotNull
-    @Size(min=1, message = "Name of employer must not be empty")
+//    @NotNull
+//    @Size(min=1, message = "Name of employer must not be empty")
     private String employer;
 
-    @NotNull
-    @Size(min=1, message = "Location must not be empty")
+//    @NotNull
+//    @Size(min=1, message = "Location must not be empty")
     private String location;
 
-    @NotNull
-    @Size(min=1, message = "The position type must not be empty")
+//    @NotNull
+//    @Size(min=1, message = "The position type must not be empty")
     private String positionType;
 
-    @NotNull
-    @Size(min=1, message = "Skill must not be empty")
+//    @NotNull
+//    @Size(min=1, message = "Skill must not be empty")
     private String coreCompetency;
 
  //   public static void add(JobData jobForm){jobData.add(jobForm);}  //refer to CheeseData.java line 13
