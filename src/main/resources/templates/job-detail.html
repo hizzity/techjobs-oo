@@ -24,23 +24,23 @@
             <table  th:fragment="single-job" class="job-listing">
                 <tr>
                     <th>Name</th>
-                    <td th:text="*{name}"></td>
+                    <td th:text="${someJob.name}"></td>
                 </tr>
                 <tr>
                     <th>Employer</th>
-                    <td th:text="*{employer}"></td>
+                    <td th:text="${someJob.employer}"></td>   <!--syntax!!! how to get employer from id-->
                 </tr>
                 <tr>
                     <th>Location</th>
-                    <td th:text="*{location}"></td>
+                    <td th:text="${someJob.location}"></td>
                 </tr>
                 <tr>
                     <th>Position Type</th>
-                    <td th:text="*{positionType}"></td>
+                    <td th:text="${someJob.positionType}"></td>
                 </tr>
                 <tr>
                     <th>Skill</th>
-                    <td th:text="*{coreCompetency}"></td>
+                    <td th:text="${someJob.coreCompetency}"></td>
                 </tr>
             </table>
 

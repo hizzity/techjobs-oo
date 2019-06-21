@@ -28,21 +28,21 @@ public class JobForm {
 
 //   @NotNull
 //    @Size(min=1, message = "Name of employer must not be empty")
-    private String employer;
+//    private String employer;
 
-//    @NotNull
+    @NotNull
 //    @Size(min=1, message = "Location must not be empty")
-    private String location;
+    private int location;
 
-//    @NotNull
+    @NotNull
 //    @Size(min=1, message = "The position type must not be empty")
-    private String positionType;
+    private int positionType;
 
-//    @NotNull
+    @NotNull
 //    @Size(min=1, message = "Skill must not be empty")
-    private String coreCompetency;
+    private int coreCompetency;
 
- //   public static void add(JobData jobForm){jobData.add(jobForm);}  //refer to CheeseData.java line 13
+//    public static void add(JobData jobForm){jobData.add(jobForm);}  //refer to CheeseData.java line 13
 
     private ArrayList<Employer> employers;
     private ArrayList<Location> locations;
@@ -112,35 +112,27 @@ public class JobForm {
         this.positionTypes = positionTypes;
     }
 
-    public String getEmployer() {
-        return employer;
-    }
-
-    public void setEmployer(String employer) {
-        this.employer = employer;
-    }
-
-    public String getLocation() {
+    public int getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
+    public void setLocation(int location) {
         this.location = location;
     }
 
-    public String getPositionType() {
+    public int getPositionType() {
         return positionType;
     }
 
-    public void setPositionType(String positionType) {
+    public void setPositionType(int positionType) {
         this.positionType = positionType;
     }
 
-    public String getCoreCompetency() {
+    public int getCoreCompetency() {
         return coreCompetency;
     }
 
-    public void setCoreCompetency(String coreCompetency) {
+    public void setCoreCompetency(int coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
 }
